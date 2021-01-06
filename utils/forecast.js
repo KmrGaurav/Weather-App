@@ -14,10 +14,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if(body.cod === '401') {
             callback('[OpenWeatherMap]: Invalid API key', undefined)
         } else {
-            callback(undefined, {
-                temp: body.main.temp,
-                location: body.name
-            })
+            callback(undefined, 'Currently there is ' + body.weather[0].description + '. It is currently ' + body.main.temp + ' degrees out.')
         }
     })
 }
