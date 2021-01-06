@@ -9,7 +9,7 @@ if(args.length < 3)
 else if(args.length > 3)
     return console.log('Please provide only one argument')
 
-geocode(address, (gError, { latitude, longitude, location }) => {
+geocode(address, (gError, { latitude, longitude, location } = {}) => {
     if(gError) {
         return console.log(gError)
     }
